@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}my sells{% endblock title %}
+{% block body %} 
+<form method="post" action="{% url "saveproduct" %}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="Title" class="form-label">Product Name</label>
+      <input type="text" name="Title" class="form-control" placeholder="enter your product name ">
+    </div>
+    <div class="mb-3">
+      <label for="desc" class="form-label">description</label>
+      <input type="text" name="desc" class="form-control" placeholder="description">
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input type="number" name="price" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">Image</label>
+      <input type="file" name="image" id="fileToUpload">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock body %}

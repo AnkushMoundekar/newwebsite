@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import Product
-
 # Register your models here.
-@admin.register(Product)
-class DataAdmin(admin.ModelAdmin):
-    pass
+
+from home.models import Product
+
+admin.site.register(Product)
