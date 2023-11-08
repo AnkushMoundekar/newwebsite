@@ -2,15 +2,18 @@
 {% block title %}Products{% endblock title %}
 {% block body %}
 This is product page
-{% for item in products %}
-<div class="card" style="width: 18rem;">
-  <img src="{{item.image.url}}" class="card-img-top" alt="{{item.title}}"height=200 width=200>
-  <div class="card-body">
-    <h5 class="card-title">{{item.title}}</h5>
-    <p class="card-text">{{item.description}}</p>
-    <p class="card-text text-primary"><Strong>{{item.price}}</Strong></p>
-    <a href="#" class="btn btn-primary">Buy</a>
+<div style="display: flex; flex-direction:row;">
+
+  {% for item in products %}
+  <div class="card" style="width: 18rem;">
+    <img src="{{item.image.url}}" class="card-img-top" alt="{{item.title}}"height=200 width=200>
+    <div class="card-body">
+      <h5 class="card-title">{{item.title}}</h5>
+      <p class="card-text">{{item.description}}</p>
+      <p class="card-text text-primary"><Strong>{{item.price}}</Strong></p>
+      <a href="#" class="btn btn-primary">Buy</a>
+    </div>
   </div>
+  {% endfor %}
 </div>
-{% endfor %}
 {% endblock body %}
